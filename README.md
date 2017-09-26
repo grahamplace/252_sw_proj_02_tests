@@ -33,6 +33,6 @@ Graham's test to make sure that if all instruction variables are set to 0, nothi
 Graham's test to make sure that an empty array doesn't blow things up. Uses the intsArray_len approach, so set length to 0. 
 
 
-#### 6. test_print_ints_how1:
+#### 7. test_print_ints_how1:
 
 It seems Russ's included tests don't actually check the case where printInts_howToFindLen == 1 (and thus print number of elements based on addresses of start and end of array. This test checks that the entire array is printed when this is the case.
