@@ -1,0 +1,5 @@
+printInts: About to print an unknown number of elements.  Will stop at a zero element.
++-------------------------------+
+|    Testcase Variable Dump:    |
++-------------------------------+
+0 123 -256 23345 17 2570
