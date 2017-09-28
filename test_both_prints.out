@@ -1,0 +1,20 @@
+printInts: About to print 8 elements.
+1234
+-17
+100
+4096
+0
+-32768
+10
+13
+printWords: There were 6 words.
+World!
+Hello,
+test.
+a
+is
+This
++-------------------------------+
+|    Testcase Variable Dump:    |
++-------------------------------+
+1234 -17 100 4096 0 -32768 10 13
