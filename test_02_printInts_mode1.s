@@ -13,29 +13,27 @@
 printInts:
 	.byte	1
 printWords:
-	.byte	1
+	.byte	0
 bubbleSort:
-	.byte	1
+	.byte	0
 
 printInts_howToFindLen:
-	.half	0	# 0 - read intsArray_len; 1 - calc intsArray_END-intsArray; 2 - null terminated
+	.half	1	# 0 - read intsArray_len; 1 - calc intsArray_END-intsArray; 2 - null terminated
 
 intsArray:
-	.word	1234
-	.word	-17
-	.word	100
-	.word	4096
-	.word	0
-	.word	-32768
-	.word	10
-	.word	13
+	.word	65535
+	.word	123
+	.word	-256
+	.word	0	# zero-terminator
+	.word	17
+	.word	2570
 intsArray_END:
 
 intsArray_len:
-	.word	8
+	.word	3	# this is a lie!, suppose to be 6
 
 theString:
-	.asciiz	"This is a test.  This is only a test.  Note that double-spaces will lead to blank lines!"
+	.asciiz	"The quick brown fox jumps over the lazy dog."
 
 
 
@@ -102,22 +100,6 @@ TESTCASE_MSG:	.ascii 	"+-------------------------------+\n"
 	
 	addi	$v0, $zero, 1		# print_int(intsArray[5])
 	lw	$a0, 20($s0)
-	syscall
-	
-	addi	$v0, $zero,11		# print_char(' ')
-	addi	$a0, $zero,0x20
-	syscall
-	
-	addi	$v0, $zero, 1		# print_int(intsArray[6])
-	lw	$a0, 24($s0)
-	syscall
-	
-	addi	$v0, $zero,11		# print_char(' ')
-	addi	$a0, $zero,0x20
-	syscall
-	
-	addi	$v0, $zero, 1		# print_int(intsArray[7])
-	lw	$a0, 28($s0)
 	syscall
 	
 	

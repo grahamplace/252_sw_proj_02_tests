@@ -11,28 +11,36 @@
 .globl	theString
 
 printInts:
-	.byte	1
+	.byte	0
 printWords:
-	.byte	1
+	.byte	0
 bubbleSort:
 	.byte	1
 
 printInts_howToFindLen:
-	.half	0	# 0 - read intsArray_len; 1 - calc intsArray_END-intsArray; 2 - null terminated
+	.half	1	# 0 - read intsArray_len; 1 - calc intsArray_END-intsArray; 2 - null terminated
 
 intsArray:
-	.word	1234
-	.word	-17
-	.word	100
-	.word	4096
+	.word	-1111111
+	.word	134679284
+	.word	-1346792846
+	.word	1
+	.word	337252345
+	.word	-1346792846
+	.word	99
+	.word	99999999
+	.word	-1346792846
+	.word	88888888
+	.word	456545654
+	.word	123456789
 	.word	0
-	.word	-32768
-	.word	10
-	.word	13
+	.word	11111111
+	.word	-9999999
+	.word	337252345
 intsArray_END:
 
 intsArray_len:
-	.word	8
+	.word	16
 
 theString:
 	.asciiz	"This is a test.  This is only a test.  Note that double-spaces will lead to blank lines!"
@@ -119,7 +127,70 @@ TESTCASE_MSG:	.ascii 	"+-------------------------------+\n"
 	addi	$v0, $zero, 1		# print_int(intsArray[7])
 	lw	$a0, 28($s0)
 	syscall
+
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+			
+	addi	$v0, $zero, 1		# print_int(intsArray[8])
+	lw	$a0, 32($s0)
+	syscall
+
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+			
+	addi	$v0, $zero, 1		# print_int(intsArray[9])
+	lw	$a0, 36($s0)
+	syscall
 	
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+	
+	addi	$v0, $zero, 1		# print_int(intsArray[10])
+	lw	$a0, 40($s0)
+	syscall
+	
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+	
+	addi	$v0, $zero, 1		# print_int(intsArray[11])
+	lw	$a0, 44($s0)
+	syscall
+
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+
+	addi	$v0, $zero, 1		# print_int(intsArray[12])
+	lw	$a0, 48($s0)
+	syscall
+
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+			
+	addi	$v0, $zero, 1		# print_int(intsArray[13])
+	lw	$a0, 52($s0)
+	syscall
+	
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+	
+	addi	$v0, $zero, 1		# print_int(intsArray[14])
+	lw	$a0, 56($s0)
+	syscall
+	
+	addi	$v0, $zero,11		# print_char(' ')
+	addi	$a0, $zero,0x20
+	syscall
+	
+	addi	$v0, $zero, 1		# print_int(intsArray[15])
+	lw	$a0, 60($s0)
+	syscall
 	
 	addi	$v0, $zero,11		# print_char('\n')
 	addi	$a0, $zero,0xa
